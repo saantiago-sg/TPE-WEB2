@@ -1,19 +1,10 @@
 <?php
 
-require_once "./controller/trabajoController.php";
+require_once "./controller/noticias_controller.php";
 
 $partesURL = explode('/', $_GET['action']);
-$controller = new trabajoController();
+$controller = new noticias_controller();
 
 if ($partesURL[0] == '') {
-  $controller->home();
-}else{
-if ($partesURL[0] == 'insertarTarea') {
-  $controller->insertarTarea();
 }
-elseif($partesURL[0] == 'montoTotal'){
-  $controller->montoTotal();
-}
-}
-
  ?>
