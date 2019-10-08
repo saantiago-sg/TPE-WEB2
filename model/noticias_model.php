@@ -20,9 +20,8 @@ function obtenerNoticias(){
   return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function agregarNoticia($titulo,$descripcion,$fecha,$club/*,$imagen*/){
+function agregarNoticia($titulo,$descripcion,$fecha,$club,$imagen){
   $id_club=$this->obtenerID($club);
-  $imagen="";
   $sentencia = $this->db->prepare("INSERT INTO noticia(id_club,imagen,titulo,descripcion,fecha) VALUES(?,?,?,?,?)");
   $sentencia->execute(array($id_club, $imagen,$titulo,$descripcion,$fecha));
 }
@@ -45,7 +44,16 @@ function obtenerID($clubIngresado){
 function crearClub($clubIngresado){
   $sentencia = $this->db->prepare("INSERT INTO club(nombre_club) VALUES(?)");
   $sentencia->execute(array($clubIngresado));
+}
 
+function borrarNoticia($id_club){
+  $sentencia = $this->db->prepare("DELETE from noticia where id_noticia=(?)");
+  $sentencia->execute(array($id_club));
+}
+
+function cambiar($id,$titulo,$descripcion,$fecha,$club,$imagen){
+$sentencia = $this->db->prepare("UPDATE noticia SET titulo='$titulo',descripcion='$descripcion',fecha='$fecha',club='$club',imagen='$imagen' WHERE id_noticia=?");
+$sentencia->execute(array($id));
 }
 
 }

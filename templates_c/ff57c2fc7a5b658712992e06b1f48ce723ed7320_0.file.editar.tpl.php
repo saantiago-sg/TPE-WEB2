@@ -1,30 +1,26 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-05 04:06:28
-  from 'C:\xampp\htdocs\TPE-WEB2\templates\home.tpl' */
+/* Smarty version 3.1.33, created on 2019-10-08 23:07:42
+  from 'C:\xampp\htdocs\TPE-WEB2\templates\editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d97faa4b236e6_68031238',
+  'unifunc' => 'content_5d9cfa9edc8904_60476153',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '1ddd3ce304f1935170668289356fc0dc1ddff9bc' => 
+    'ff57c2fc7a5b658712992e06b1f48ce723ed7320' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\TPE-WEB2\\templates\\home.tpl',
-      1 => 1570241187,
+      0 => 'C:\\xampp\\htdocs\\TPE-WEB2\\templates\\editar.tpl',
+      1 => 1570568857,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
-    'file:agregarNoticia.tpl' => 1,
-    'file:noticias.tpl' => 1,
-    'file:aside.tpl' => 1,
   ),
 ),false)) {
-function content_5d97faa4b236e6_68031238 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9cfa9edc8904_60476153 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,33 +32,28 @@ function content_5d97faa4b236e6_68031238 (Smarty_Internal_Template $_smarty_tpl)
     <title>Oscurin</title>
 </head>
 <body>
-<header class="sticky-top">
-<?php $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-</header>
-
-<picture>
-    <img src="img/portada.jpg" class="d-block w-100 img-fluid" alt="portada de futbol">
-</picture>
-
-<div class="centrar">
-<div class="row my-3">
-    <div class="col-3">
-    <?php $_smarty_tpl->_subTemplateRender("file:agregarNoticia.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-    </div>
-    <div class="col-6">
-    <?php $_smarty_tpl->_subTemplateRender("file:noticias.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-    </div>
-    <div class="col-3">
-    <?php $_smarty_tpl->_subTemplateRender("file:aside.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-    </div>
+<div class="container ">
+<form action="cambiar" method="post">
+<h5 class="h5-responsive font-weight-bold text-center titulo-fondo py-2 w-100 text-white">Agregar una noticia</h5>
+  <div class="form-group small">
+  <label for="exampleFormControlFile1" class="mt-3" >Titulo de la noticia</label>
+  <input class="form-control" type="text" name="titulo">
+  <label for="exampleFormControlFile1" class="mt-3" >Descripcion de la noticia</label>
+  <input class="form-control" type="text" name="descripcion">
+  <label for="exampleFormControlFile1" class="mt-3" >Fecha de publicacion</label>
+  <input class="form-control" type="date" name="fecha">
+  <label for="exampleFormControlFile1" class="mt-3" >Club al que pertenece</label>
+  <input class="form-control" type="text" name="club">
+  <label for="exampleFormControlFile1" class="mt-3" >Nombre de la imagen</label>
+  <input class="form-control" type="text" name="imagen">
+  </div>
+  <input class="form-control" type="text" name="imagen" value="<?php echo $_smarty_tpl->tpl_vars['noticia']->value;?>
+" name="noticia">
+  <button type="submit" class="btn btn-danger mb-2">editar</button>
+  
+</form>
 
 </div>
-</div>
-
 <?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
 >
@@ -72,6 +63,7 @@ function content_5d97faa4b236e6_68031238 (Smarty_Internal_Template $_smarty_tpl)
 <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"><?php echo '</script'; ?>
 >
+
 </body>
 </html><?php }
 }

@@ -8,7 +8,10 @@ class noticias_view
        $smarty->assign('noticia',$noticia);
        $smarty->display('templates/home.tpl');
     }
-      
+    function editar($id_noticia){
+        $smarty= new Smarty();
+        $smarty->assign('noticia',$id_noticia);
+        $smarty->display('templates/editar.tpl');
+    }
 }
-
 
