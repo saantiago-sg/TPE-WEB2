@@ -23,7 +23,7 @@
   <input class="form-control" type="text" name="club">
   <label for="exampleFormControlFile1" class="mt-3" >Nombre de la imagen</label>
   <input class="form-control" type="text" name="imagen">
-  <h1 name="noticia">{$noticia}</h1>
+  <input class="form-control" hidden type="text" name="noticia" value="{$noticia}">
   </div>
   <button type="submit" class="btn btn-danger mb-2">editar</button>
   

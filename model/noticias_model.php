@@ -52,10 +52,28 @@ function borrarNoticia($id_club){
 }
 
 function cambiar($id,$titulo,$descripcion,$fecha,$club,$imagen){
-$sentencia = $this->db->prepare("UPDATE noticia SET titulo='$titulo',descripcion='$descripcion',fecha='$fecha',club='$club',imagen='$imagen' WHERE id_noticia=?");
+$id_club=$this->obtenerID($club);
+$sentencia =$this->db->prepare("UPDATE noticia SET id_noticia='$id', id_club='$id_club', imagen='$imagen', titulo='$titulo', descripcion='$descripcion', fecha='$fecha' WHERE id_noticia=?");
 $sentencia->execute(array($id));
 }
 
+
+function filtrarNoticia($filtro_ingresado){
+  $id_club=$this->obtenerIDClub($filtro_ingresado);
+  foreach ($id_club as $club) {
+    $id_club=$club['id_club'];
+  }
+
+
+  $sentencia=$this->db->prepare("select * from noticia where id_club=?");
+  $sentencia->execute(array($id_club));
+  return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
+function obtenerIDClub($filtro_ingresado){
+  $sentencia=$this->db->prepare("select * from club where nombre_club=?");
+  $sentencia->execute(array($filtro_ingresado));
+  return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
 }
 
 

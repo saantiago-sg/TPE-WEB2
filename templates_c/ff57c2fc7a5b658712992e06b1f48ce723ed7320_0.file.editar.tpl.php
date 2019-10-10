@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-08 23:07:42
+/* Smarty version 3.1.33, created on 2019-10-10 22:19:55
   from 'C:\xampp\htdocs\TPE-WEB2\templates\editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d9cfa9edc8904_60476153',
+  'unifunc' => 'content_5d9f926b132383_06780968',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff57c2fc7a5b658712992e06b1f48ce723ed7320' => 
     array (
       0 => 'C:\\xampp\\htdocs\\TPE-WEB2\\templates\\editar.tpl',
-      1 => 1570568857,
+      1 => 1570738794,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d9cfa9edc8904_60476153 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d9f926b132383_06780968 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,9 +46,9 @@ function content_5d9cfa9edc8904_60476153 (Smarty_Internal_Template $_smarty_tpl)
   <input class="form-control" type="text" name="club">
   <label for="exampleFormControlFile1" class="mt-3" >Nombre de la imagen</label>
   <input class="form-control" type="text" name="imagen">
+  <input class="form-control" hidden type="text" name="noticia" value="<?php echo $_smarty_tpl->tpl_vars['noticia']->value;?>
+">
   </div>
-  <input class="form-control" type="text" name="imagen" value="<?php echo $_smarty_tpl->tpl_vars['noticia']->value;?>
-" name="noticia">
   <button type="submit" class="btn btn-danger mb-2">editar</button>
   
 </form>

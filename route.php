@@ -20,4 +20,7 @@ elseif(($partesURL[0]=='editar')&&($partesURL[1]=='cambiar')){
 elseif($partesURL[0]=='editar'){
     $controller->editarNoticia($partesURL[1]);
     }
+elseif($partesURL[0]=='filtrar'){
+    $controller->filtrarNoticia();
+    }
 ?>
