@@ -69,6 +69,7 @@ function filtrarNoticia($filtro_ingresado){
   $sentencia->execute(array($id_club));
   return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 }
+
 function obtenerIDClub($filtro_ingresado){
   $sentencia=$this->db->prepare("select * from club where nombre_club=?");
   $sentencia->execute(array($filtro_ingresado));
